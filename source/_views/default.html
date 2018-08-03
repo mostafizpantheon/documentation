@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+    <!-- Reload on changes in the dev environment -->
+    {% if site.env == 'dev' %}
+    <script type="text/javascript">
+        var changedUrl = '{{ site.url }}/changed';
+    </script>
+    <script src="{{ site.url }}/docs/js/watch.js"></script>
+    {% endif %}
+
     <!-- Quickie redirection to https and pantheon.io -->
     <script type="text/javascript">
   if (window.location.hostname == 'localhost' ||
